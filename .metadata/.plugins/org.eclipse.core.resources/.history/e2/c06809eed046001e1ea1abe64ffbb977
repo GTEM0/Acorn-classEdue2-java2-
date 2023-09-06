@@ -1,0 +1,52 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*" %>
+
+<%
+String regno = request.getParameter("regno");
+
+// 이 부분에서는 PreparedStatement를 사용하여 SQL Injection을 방지합니다.
+String sql = "DELETE FROM tblcall_list WHERE regno = ?";
+Connection con = null;
+PreparedStatement ps = null;
+
+try {
+    String driver = "oracle.jdbc.driver.OracleDriver";
+    String url = "jdbc:oracle:thin:@localhost:1521:xe";
+    String user = "scott";
+    String password = "tiger";
+
+    // 오라클 드라이버 로딩
+    Class.forName(driver);
+
+    // 데이터베이스 연결
+    con = DriverManager.getConnection(url, user, password);
+
+    // PreparedStatement 생성
+    ps = con.prepareStatement(sql);
+    ps.setString(1, regno);
+
+    // SQL 실행
+    int rowsAffected = ps.executeUpdate();
+
+    if (rowsAffected > 0) {
+        out.println("Record deleted successfully.");
+    } else {
+        out.println("No record found to delete.");
+    }
+
+} catch (Exception e) {
+    e.printStackTrace();
+} finally {
+    // 자원의 반납 (try-with-resources를 사용하지 않을 경우)
+    try {
+        if (ps != null) ps.close();
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    try {
+        if (con != null) con.close();
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+}
+%>

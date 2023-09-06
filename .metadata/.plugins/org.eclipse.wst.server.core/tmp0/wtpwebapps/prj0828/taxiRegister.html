@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	
+	function check(){
+		//return false;
+		
+		let frm = document.frm;
+		let regno = frm.regno;
+		let regtime = frm.regtime;
+		let regdate = frm.regdate;
+		let cusno = frm.cusno;
+		let startpoint = frm.startpoint;
+		let destination = frm.destination;
+		let taxino = frm.taxino;
+		let state = frm.state;
+		
+		if(regno.value == ""){
+			alert("예약번호입력");
+			userid.focus();
+			return false;
+		}
+		if(regtime.value == ""){
+			alert("예약시간입력");
+			userpw.focus();
+			return false;
+		}
+		if(regdate.value == ""){
+			alert("예약날짜입력");
+			username.focus();
+			return false;
+		}
+		if(cusno.value == ""){
+			alert("고객명입력");
+			username.focus();
+			return false;
+		}
+		if(startpoint.value == ""){
+			alert("출발지입력");
+			username.focus();
+			return false;
+		}
+		if(destination.value == ""){
+			alert("목적지입력");
+			username.focus();
+			return false;
+		}
+		if(taxino.value == ""){
+			alert("택시번호입력");
+			username.focus();
+			return false;
+		}
+		if(state.value == ""){
+			alert("상태입력");
+			username.focus();
+			return false;
+		}
+		return true;
+	}
+	
+</script>
+</head>
+<body>
+
+<!--submit을 중지하고 싶을 때 사용할 수 있음-->
+
+<form name = "frm" action = "register_action.jsp" method="post" onsubmit="return check()">
+	<input type = "text" name="userid">
+	<input type = "text" name="userpw">
+	<input type = "text" name="username">
+	
+	<br>
+	<button> 회원가입 </button>
+	
+</form>
+</body>
+</html>

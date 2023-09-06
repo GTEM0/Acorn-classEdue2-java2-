@@ -1,0 +1,19 @@
+package prj0831;
+
+import java.util.ArrayList;
+
+public class ServiceMVC4 {
+	
+	public String[] getMovies() {
+		
+		
+		ArrayList<String> list = new getMovies();
+		list[0]="어벤저스";
+		list[1]="엘리멘트";
+		list[2]="비포선라이즈";
+		
+		return result;
+	}
+	
+
+}

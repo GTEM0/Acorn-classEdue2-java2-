@@ -1,0 +1,15 @@
+package prj0901;
+
+public class Customer {
+
+	String id;
+	String pw;
+	String name;
+	
+	//생성자
+	//setter getter
+	//toString()
+	
+	
+	
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+	<script>
+		
+		function send(){
+			//alert("sdfsafas");
+			
+			//$.ajax();	() 인자정보를 객체타입으로 제공함
+			
+			$.ajax({
+				type : "get", 
+				dataType : "text",
+				url : "/ajaxPrj_09_6/food0",
+			})
+		}
+	</script>
+</head>
+<body>
+
+	<button onclick="send()">음식정보</button>
+
+	<div id="result"></div>
+
+</body>
+</html>

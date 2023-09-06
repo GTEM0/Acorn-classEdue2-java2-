@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+	// JavaScript 함수: div의 텍스트 색상을 빨간색으로 변경
+	function changeCss(){
+		let div = document.querySelector("#wrap");
+		div.style.color = "red";			
+	}
+	
+	// JavaScript 함수: div의 텍스트 색상을 보라색으로 변경
+	function changeCss2(){
+		let div = document.querySelector("#wrap");
+		div.style.color = "purple";			
+	}
+	
+	// jQuery 함수: div의 텍스트 색상을 파란색으로 변경
+	function changeCss3(){
+		$("#wrap").css("color", "blue");
+	}
+
+	$(function(){
+		// 변수 선언: 기본 폰트 크기를 12px로 지정
+        let basicFont = 12;
+        
+        // jQuery 이벤트 핸들러: zoomIn 버튼 클릭 시 폰트 크기 확대
+        $(".zoomIn").click(function(){
+            basicFont++; // 폰트 크기 증가
+            
+            // 폰트 크기가 20을 넘어가면 20으로 제한
+            if( basicFont > 20 ) {
+            	basicFont = 20;
+            }
+            
+            // 폰트 크기 출력 업데이트
+            $(".fontSize").text(basicFont + "px");
+            
+            // div의 폰트 크기 변경
+            $("#wrap").css("font-size", basicFont + "px");
+        });
+        
+        // jQuery 이벤트 핸들러: zoomOut 버튼 클릭 시 폰트 크기 축소
+        $(".zoomOut").click(function(){
+            basicFont--; // 폰트 크기 감소
+            
+            // 폰트 크기가 10보다 작아지면 10으로 제한
+            if( basicFont < 10 ) {
+            	basicFont = 10;
+            }
+            
+            // 폰트 크기 출력 업데이트
+            $(".fontSize").text(basicFont + "px");
+            
+            // div의 폰트 크기 변경
+            $("#wrap").css("font-size", basicFont + "px");
+        });
+        
+        // jQuery 이벤트 핸들러: origin 버튼 클릭 시 폰트 크기 초기화
+        $(".origin").click(function(){
+            basicFont = 12; // 기본 폰트 크기로 초기화
+            $(".fontSize").text("12px"); // 폰트 크기 출력 업데이트
+            $("#wrap").css("font-size", "12px"); // div의 폰트 크기 초기화
+        });
+        
+        // jQuery 이벤트 핸들러: zorigin 버튼 클릭 시 폰트 크기와 색상 초기화
+        $(".zorigin").click(function(){
+            basicFont = 12; // 기본 폰트 크기로 초기화
+            $(".fontSize").text("12px"); // 폰트 크기 출력 업데이트
+            $("#wrap").css("font-size", "12px"); // div의 폰트 크기 초기화
+            $("#wrap").css("color", "black"); // div의 텍스트 색상 초기화
+        });
+    });
+</script>
+</head>
+<body>
+
+<h2> 3개의 버튼을 자바스크립트와 jQuery를 이용하여 클릭 시 div 내용의 색상이 변경되도록 하기!</h2>
+
+<h2>동적으로 이벤트 처리하기 자바스크립트, jQuery</h2>
+<button id="btn1" onclick="changeCss()">버튼R</button>
+<button id="btn2" onclick="changeCss2()">버튼G</button>
+<button id="btn3" onclick="changeCss3()">버튼B</button>
+<button class="zoomIn">글자 크기 확대</button>
+<button class="zoomOut">글자 크기 축소</button>
+<button class="origin">글자 크기 초기화</button>
+<button class="zorigin">글자 크기 및 색상 초기화</button>
+
+<div id="wrap">front</div>
+<div class="fontSize">12px</div> <!-- 폰트 크기 출력 -->
+</body>
+</html>

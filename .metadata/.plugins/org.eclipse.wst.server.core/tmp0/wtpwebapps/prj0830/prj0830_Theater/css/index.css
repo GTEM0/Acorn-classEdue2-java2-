@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+
+header{
+	margin: 0 auto;
+	width: 539px;
+}
+
+nav{
+	margin: 0 auto;
+	padding: 10px;
+	background-color: aliceblue;
+	width: 539px;
+}
+
+h2{
+	margin:0 auto;
+	text-align : center;
+}
+table{
+	border:1px solid black;
+	border-collapse: collapse;
+	margin : 0 auto;	
+}
+tr{
+	border: 1px solid black;
+	margin : 0 auto;
+}
+TD{
+	border: 1px solid black;
+	TEXT-ALIGN: CENTER;
+}
+
+ul{
+	list-style: none;
+	text-align: center;
+}
+ul >li{
+	display: inline-block;
+	padding-right :20px;
+}
+
+

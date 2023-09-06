@@ -1,0 +1,35 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="java.sql.*" %>
+
+<%
+String R_NUM = request.getParameter("r_num");
+Connection con = null;
+PreparedStatement pstmt = null; // PreparedStatement 사용
+String deleteSql = "DELETE FROM tbl_movie_order_02 WHERE r_num = ?"; // Placeholder 사용
+
+try {
+    String driver = "oracle.jdbc.driver.OracleDriver";
+    String url = "jdbc:oracle:thin:@localhost:1521:xe";
+    String user = "scott";
+    String password = "tiger";
+
+    Class.forName(driver);
+    con = DriverManager.getConnection(url, user, password);
+
+    pstmt = con.prepareStatement(deleteSql);
+    pstmt.setString(1, R_NUM); // Placeholder 값 설정
+    pstmt.executeUpdate(); // executeUpdate()를 사용하여 데이터베이스 수정
+
+} catch (Exception e) {
+    e.printStackTrace();
+} finally {
+    try {
+        if (pstmt != null) pstmt.close();
+        if (con != null) con.close();
+    } catch (SQLException se) {
+        se.printStackTrace();
+    }
+}
+
+response.sendRedirect("list.jsp");
+%>

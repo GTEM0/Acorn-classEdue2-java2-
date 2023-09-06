@@ -1,0 +1,9 @@
+package prj0901;
+
+public class Coffee {
+
+	
+	String code;
+	String name;
+	String price;
+}

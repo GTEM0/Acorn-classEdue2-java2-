@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>"
+</head>
+
+<script>
+	
+	
+</script>
+
+<body>
+
+
+<input type = "text" id = "userid">
+<button>클릭</button>
+
+
+</body>
+</html>

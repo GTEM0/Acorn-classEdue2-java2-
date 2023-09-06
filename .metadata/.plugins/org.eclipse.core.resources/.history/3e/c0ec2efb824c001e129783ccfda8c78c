@@ -1,0 +1,9 @@
+package acorn;
+
+public class movie {
+
+	String title;
+	String price;
+	
+	
+}
