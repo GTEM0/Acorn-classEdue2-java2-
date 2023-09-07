@@ -5,6 +5,11 @@ public class Movie {
 	String title;
 	String price;
 	
+	public Movie(String title, String price) {
+		super();
+		this.title = title;
+		this.price = price;
+	}
 	public Movie() {
 		
 	}
@@ -23,11 +28,6 @@ public class Movie {
 	@Override
 	public String toString() {
 		return "movie [title=" + title + ", price=" + price + "]";
-	}
-	public Movie(String title, String price) {
-		super();
-		this.title = title;
-		this.price = price;
 	}
 	
 	

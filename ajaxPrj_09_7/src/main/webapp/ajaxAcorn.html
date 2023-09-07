@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+	<script>
+		
+		function send(){
+			$.ajax({
+				type: "get",
+				dataType: "json",
+				url: "/ajaxPrj_09_7/acorntbl",
+				success: function(data){
+					alert(data);
+					console.log(data);
+					
+					for(let i = 0; i<data.length; i++){
+						let item = data[i];
+						
+						let str = `<tr><td> ${item.id}</td><td>  ${item.pw}</td><td> ${item.name}</td></tr>`;
+						$("#result").append(str);
+						
+					}
+				},
+				error: function(){
+					alert("요청에 실패했습니다");
+				}
+			}
+			);
+		}
+		
+		
+	</script>
+</head>
+<body>
+
+	<button onclick="send()">학생정보</button>
+	
+	<table id="result"> </table>
+</body>
+</html>

@@ -10,6 +10,9 @@ public class Food {
 		this.name = name;
 		this.price = price;
 	}
+	public Food() {
+		// TODO Auto-generated constructor stub
+	}
 	public String getName() {
 		return name;
 	}
@@ -27,8 +30,6 @@ public class Food {
 		return "Food [name=" + name + ", price=" + price + "]";
 	}
 	
-	public Food() {
-		// TODO Auto-generated constructor stub
-	}
+	
 
 }

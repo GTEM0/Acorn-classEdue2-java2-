@@ -34,7 +34,7 @@ public class FoodDAO {
 	public ArrayList<Food> getFoodList() {
 
 		Connection con = dbcon();
-		String sql = " select  * from  foodtbl ";
+		String sql = " select * from foodtbl ";
 		ArrayList<Food> list = new ArrayList<>();
 
 		try {
@@ -54,7 +54,6 @@ public class FoodDAO {
 			con.close();
 
 		} catch (SQLException e) {
-
 			e.printStackTrace();
 		}
 		return list;

@@ -15,19 +15,19 @@
 			$.ajax({
 				type: "get",
 				dataType: "json",		//json으로 하게 되면 객체로서 f12눌러야지 나오게끔됨. text를 하게되면 위에뜸.
-				url: "/ajaxPrj_09_6/food4",				
+				url: "/ajaxPrj_09_6/food4",
 				success: function (data) {	//success - 성공했다는 의미??
-					alert(data);					
+					alert(data);
 					console.log(data);		//data - 서버가 준 데이터
 					//$("#result").html(data);
-					
+
 				},
-				
+
 				error: function (err) {
 					console.log(err);
 				}
 			}
-		);
+			);
 		}
 	</script>
 </head>

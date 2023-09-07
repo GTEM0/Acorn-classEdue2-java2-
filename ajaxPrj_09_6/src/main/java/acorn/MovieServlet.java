@@ -20,7 +20,7 @@ public class MovieServlet  extends HttpServlet {
 		resp.setContentType("text/html;charset=utf-8");	
 		
 		MovieService service = new MovieService();
-		JSONArray arr= service.getmovieRealList();
+		JSONArray arr = service.getmovieRealList();
 		resp.getWriter().println(arr); 		
 	}
 }
