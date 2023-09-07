@@ -48,9 +48,7 @@ public class MovieService {
 			JSONObject o = new JSONObject();
 			o.put("title", f.getTitle());
 			o.put("price", f.getPrice());
-			arr.put(o);
-
-			return arr;
+			arr.put(o);			 
 		}
 		return arr;
 	}

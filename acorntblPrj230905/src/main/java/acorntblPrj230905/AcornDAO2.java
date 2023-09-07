@@ -34,10 +34,8 @@ public class AcornDAO2 {
 	public ArrayList<String> selectAll() {
 		// 연결
 		Connection con = dbcon();
-
 		// sql
 		String sql = "select name from acorntbl";
-
 		// sql실행
 		PreparedStatement pst = null;
 		ResultSet rs = null;

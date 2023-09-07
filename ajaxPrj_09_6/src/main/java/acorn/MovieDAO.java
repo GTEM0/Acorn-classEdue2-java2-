@@ -46,11 +46,9 @@ public class MovieDAO {
 				String title = rs.getString(1); // 첫 번째 열의 데이터를 문자열로 가져옴 (영화 제목)
 				String price = rs.getString(2); // 두 번째 열의 데이터를 문자열로 가져옴 (가격)
 
-//아래 두줄 이해X
 				Movie movie = new Movie(title, price); // Movie 객체 생성
 				list.add(movie); // 영화 목록에 추가
 			}
-
 			rs.close(); // ResultSet 객체 닫기
 			pst.close(); // PreparedStatement 객체 닫기
 			con.close(); // 데이터베이스 연결 닫기

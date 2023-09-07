@@ -39,15 +39,15 @@ public class GoodsDAO {
 		return a*a;
 	}
 		
-	public ArrayList<Coffee> list2(){
-		
-		ArrayList<Coffee> list  = new ArrayList<>();
-		list.add(new Coffee("c500","아아","4000"));
-		list.add(new Coffee("c500","아아","4000"));
-		list.add(new Coffee("c500","아아","4000"));
-		
-		return list;
-	}
+//	public ArrayList<Coffee> list2(){
+//		
+//		ArrayList<Coffee> list  = new ArrayList<>();
+//		list.add(new Coffee("c500","아아","4000"));
+//		list.add(new Coffee("c500","아아","4000"));
+//		list.add(new Coffee("c500","아아","4000"));
+//		
+//		return list;
+//	}
 		
 	public ArrayList<Coffee> selectAll2(){
 		//연결

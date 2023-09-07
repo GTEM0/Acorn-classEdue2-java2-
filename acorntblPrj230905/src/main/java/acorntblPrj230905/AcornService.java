@@ -24,8 +24,7 @@ public class AcornService {
 	}
 	
 	public void registerMember(Customer c) {
-		dao.insertMember3(c);
-		
+		dao.insertMember3(c);		
 	}
 	
 	public Customer getMember(String id) {

@@ -7,13 +7,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class AcornDAO {
-
+public class TestDAO {
+	
 	String driver = "oracle.jdbc.driver.OracleDriver";
 	String url = "jdbc:oracle:thin:@localhost:1521:xe";
 	String user = "scott";
 	String password = "tiger";
-
+	
 	public Connection dbcon() {
 		Connection con = null;
 		try {
@@ -30,40 +30,39 @@ public class AcornDAO {
 		}
 		return con;
 	}
-
-	public ArrayList<Acorn> getAcornList() {
- 
+	
+	public ArrayList<Test> getTestList(){
 		Connection con = dbcon();
+		
 		String sql = "select * from acorntbl";
-		ArrayList<Acorn> list = new ArrayList<>();
-
+		ArrayList<Test> list = new ArrayList<>();
+		
 		try {
 			PreparedStatement pst = con.prepareStatement(sql);
 			ResultSet rs = pst.executeQuery();
-
-			while (rs.next()) {
+			
+			while(rs.next()) {
 				String id = rs.getString(1);
 				String pw = rs.getString(2);
 				String name = rs.getString(3);
-
-				Acorn acorn = new Acorn(id, pw, name);
-				list.add(acorn);
+				
+				Test test = new Test(id, pw, name);
+				list.add(test);				
 			}
 			rs.close();
 			pst.close();
 			con.close();
-
+			
 		} catch (SQLException e) {
-
+			
 			e.printStackTrace();
 		}
 		return list;
 	}
-
 	public static void main(String[] args) {
-		AcornDAO a = new AcornDAO();
-
-		ArrayList<Acorn> list = a.getAcornList();
+		TestDAO t = new TestDAO();
+		
+		ArrayList<Test> list = t.getTestList();
 		System.out.println(list);
 	}
 }
