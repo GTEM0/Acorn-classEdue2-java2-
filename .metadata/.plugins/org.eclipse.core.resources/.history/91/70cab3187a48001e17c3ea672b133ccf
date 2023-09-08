@@ -1,7 +1,0 @@
-package prj0901;
-
-import javax.servlet.http.HttpServlet;
-
-public class AcornDAO2Servlet extends HttpServlet{
-
-}

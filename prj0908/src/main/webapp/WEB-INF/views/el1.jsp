@@ -17,6 +17,7 @@ String result = (String) request.getAttribute("data");
 <h2>EL 사용 : 저장소에 있는 값들을 쉽게 꺼내올 수 있다</h2>
 
 ${data}
+
 <h2>사칙연산</h2>
 ${10+20}
 ${10*20}
@@ -24,7 +25,7 @@ ${10/20}
 
 <h2>논리연산</h2>
 ${true && true}
-<!--  ${true && false}
+${true && false}
 ${true and false}
 ${true || false}
 ${true or false}
@@ -38,7 +39,7 @@ pageContext.setAttribute("title", "EL연산자");
 %>
 
 ${empty title}
-${not empty title}-->
+${not empty title}
 
 
 

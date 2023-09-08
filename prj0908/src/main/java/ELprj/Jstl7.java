@@ -16,15 +16,7 @@ public class Jstl7 extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		
-		ArrayList<Book> books = new ArrayList<>();
-		
-		
-		books.add(new Book("b001", "부의 인문학", "15000"));
-		books.add(new Book("b002", "c언어를 배우기 전 알아야 할 것들", "16000"));
-		books.add(new Book("b003", "빌린 돈은 갚지 마라", "12000"));
-		
-		
-		req.setAttribute("books", books);
+	
 		req.getRequestDispatcher("WEB-INF/views/jstl7.jsp").forward(req, resp);
 	
 	}
