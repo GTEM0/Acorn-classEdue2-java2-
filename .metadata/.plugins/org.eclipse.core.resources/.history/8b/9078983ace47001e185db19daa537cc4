@@ -1,7 +1,0 @@
-package prj0831;
-
-import javax.servlet.http.HttpServlet;
-
-public class bucketList extends HttpServlet{
-
-}
