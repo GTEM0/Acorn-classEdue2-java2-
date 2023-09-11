@@ -35,9 +35,10 @@
 
 <% String test = "El을 사용하고 싶어요"; %>
 <%=test %>
-<h3>test변수를 el을  사용하고 싶다 EL표현식은 저장소에 저장된 것들만 사용할 수 있다</h3>
+<h3>test변수를 el을 사용하고 싶다 EL표현식은 저장소에 저장된 것들만 사용할 수 있다</h3>
 ${test}
-
+<% String test2 = "캌캌캌"; %>
+<%= test2 %>
 <%pageContext.setAttribute("test1", test); %>
 ${test1}
 

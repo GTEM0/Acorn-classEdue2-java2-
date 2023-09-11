@@ -17,6 +17,7 @@ public class El1 extends HttpServlet{
 			
 			
 			req.setAttribute("data", "hi el");
+			req.setAttribute("WoWwow", "zkzzkz");
 			req.getRequestDispatcher("WEB-INF/views/el1.jsp").forward(req, resp);
 			
 			

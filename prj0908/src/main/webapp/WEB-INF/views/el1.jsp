@@ -9,14 +9,19 @@
 <body>
 
 <%
-String result = (String) request.getAttribute("data");
+String result = (String) request.getAttribute("WoWwow");
+%>
+<%
+String result2 = (String) request.getAttribute("data");
 %>
 
 <%= result %>
+<%= result2 %>
 
 <h2>EL 사용 : 저장소에 있는 값들을 쉽게 꺼내올 수 있다</h2>
 
-${data}
+${WoWwow}
+<%= result2 %>
 
 <h2>사칙연산</h2>
 ${10+20}
