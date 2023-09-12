@@ -1,7 +1,0 @@
-package cartPrj;
-
-import javax.servlet.http.HttpServlet;
-
-public class addCart extends HttpServlet {
-
-}
