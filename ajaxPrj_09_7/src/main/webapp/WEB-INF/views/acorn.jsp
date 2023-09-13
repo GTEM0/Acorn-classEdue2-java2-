@@ -15,14 +15,14 @@
 	<h2>에이콘 학생 명단 (～￣▽￣)～</h2>
 
 	<%
-ArrayList<Test> list = (ArrayList<Test>)request.getAttribute("list");
-%>
+	ArrayList<Test> list = (ArrayList<Test>) request.getAttribute("list");
+	%>
 
 	<%
-	for(int i =0; i < list.size(); i++){
+	for (int i = 0; i < list.size(); i++) {
 		out.println(list.get(i) + "<br>");
 	}
-%>
+	%>
 
 </body>
 </html>

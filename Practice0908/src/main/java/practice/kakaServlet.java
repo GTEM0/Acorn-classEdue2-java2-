@@ -1,4 +1,4 @@
-package acorntbl;
+package practice;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -9,21 +9,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/test")
-public class TestAcornServlet extends HttpServlet{
+@WebServlet("/kaka")
+public class kakaServlet extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		TestAcornService t = new TestAcornService();
+		kakaService k = new kakaService();
+		ArrayList<kaka>list = k.selectAll();
 		
-		ArrayList<Test> list = t.getAllList();
-		System.out.println(list);
-		
-		req.setAttribute("list", list);
-		req.getRequestDispatcher("WEB-INF/views/acorn.jsp").forward(req, resp);
+		req.setAttribute("kaka", list);
+		req.getRequestDispatcher("WEB-INF/views/kaka.jsp").forward(req, resp);
 		
 		
 	}
+	
 	
 }
