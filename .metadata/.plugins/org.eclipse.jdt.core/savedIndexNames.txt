@@ -55,7 +55,6 @@ INDEX VERSION 1.134+C:\Users\hbi1\eclipse-workspace\.metadata\.plugins\org.eclip
 1020206430.index
 1033701432.index
 3556690114.index
-1740046186.index
 1379459905.index
 421570519.index
 3941405699.index

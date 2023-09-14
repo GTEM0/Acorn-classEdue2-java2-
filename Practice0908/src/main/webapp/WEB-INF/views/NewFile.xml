@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- web.xml -->
+<web-app>
+    <servlet>
+        <servlet-name>AddQuestionServlet</servlet-name>
+        <servlet-class>AddQuestionServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddAnswerServlet</servlet-name>
+        <servlet-class>AddAnswerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddQuestionServlet</servlet-name>
+        <url-pattern>/AddQuestionServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddAnswerServlet</servlet-name>
+        <url-pattern>/AddAnswerServlet</url-pattern>
+    </servlet-mapping>
+    <!-- 기타 설정 -->
+</web-app>

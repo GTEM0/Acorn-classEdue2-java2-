@@ -7,7 +7,7 @@ public class kakaService {
 	kakaDAO dao = new kakaDAO();
 	
 	public ArrayList<kaka> selectAll(){
-		ArrayList<kaka> list = dao.selectAll();
+		ArrayList<kaka> list = new ArrayList<kaka>();
 		return list;
 	}
 }

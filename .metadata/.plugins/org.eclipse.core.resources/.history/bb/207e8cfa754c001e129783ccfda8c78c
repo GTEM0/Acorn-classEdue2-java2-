@@ -1,9 +1,0 @@
-package acorn;
-
-public class Food {
-
-	
-	
-	String name;
-	String price;
-}

@@ -13,13 +13,14 @@
 <h2>명단</h2>
 
 <%
-ArrayList<kaka> list = (ArrayList<kaka>)request.getAttribute("kaka");
+ArrayList<kaka> list = (ArrayList<kaka>)request.getAttribute("list");
 %>
 
+
 <%
-	for(kaka l : list){
-		out.println(l + "<br>");
-	}
+for(kaka l:list){
+	out.println(l + "<br>");
+}
 %>
 
 </body>

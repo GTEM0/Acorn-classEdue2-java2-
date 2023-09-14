@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+
+
 public class kakaDAO {
 
 	String driver = "oracle.jdbc.driver.OracleDriver";
@@ -47,36 +49,28 @@ public class kakaDAO {
 		Connection con = dbcon();
 		String sql = "select * from acorntbl";
 		ArrayList<kaka> list = new ArrayList<>();
+
 		PreparedStatement pst = null;
 		ResultSet rs = null;
 		try {
 			pst = con.prepareStatement(sql);
 			rs = pst.executeQuery();
-
 			while (rs.next()) {
-
 				String id = rs.getString("id");
 				String pw = rs.getString("pw");
 				String name = rs.getString("name");
 
 				kaka ka = new kaka(id, pw, name);
 				list.add(ka);
-
 			}
+
 		} catch (SQLException e) {
+
 			e.printStackTrace();
 		}
 		close(rs, pst, con);
 		return list;
+
 	}
-
-	public static void main(String[] args) {
-
-		kakaDAO dao = new kakaDAO();
-		ArrayList<kaka> list = dao.selectAll();
-
-		for (int i = 0; i < list.size(); i++) {
-			System.out.println(list.get(i) + "<br>");
-		}
-	}
+	
 }
