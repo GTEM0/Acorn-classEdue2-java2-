@@ -12,7 +12,7 @@
 
 	<%
 	MyUtils u = new MyUtils();
-	String result = u.getDivisor(12);
+	String result = u.getDivisor(24);
 	out.println(result);
 	
 	String result2 = u.getMessage();
