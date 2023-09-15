@@ -6,7 +6,7 @@ body {
 
 .header {
 	height: 100px;
-	background-color: pink;
+	background-color: blue;
 	color: white;
 	text-align: center;
 	line-height: 50px;
@@ -58,7 +58,8 @@ body {
 
 .tr1 {
 	background-color: gray;
-	text-align: center;
+	width: 99%;
+	text-align: center;	
 }
 
 .footer {

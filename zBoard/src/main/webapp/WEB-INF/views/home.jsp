@@ -5,80 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>웹 페이지</title>
-<link href="/css/home.css" rel="stylesheet" />
-<style>
-body {
-	margin: 0;
-	padding: 0;
-}
+<link href="<%=request.getContextPath()%>/css/home.css" rel="stylesheet" />
 
-.header {
-	height: 100px;
-	background-color: pink;
-	color: white;
-	text-align: center;
-	line-height: 50px;
-	padding: 10px;
-}
 
-.navbar {
-	height: 40px;
-	background-color: gray;
-	color: white;
-	line-height: 20px;
-}
-
-.navbar ul {
-	list-style-type: none;
-	padding: 0;
-	display: flex;
-	justify-content: space-between;
-}
-
-.navbar .left {
-	
-}
-
-.navbar .right {
-	
-}
-
-.navbar li {
-	display: inline;
-	margin-right: 10px;
-}
-
-.body {
-	height: 500px;
-	background-color: bluesky;
-	text-align: center;
-	padding-top: 50px;
-}
-
-.boardZone {
-	text-align: center;
-	
-}
-
-.tableStripedTop {
-	text-align: center;
-	border: 1px solid darkgray;
-	display: center;
-	width: 100%;
-}
-
-.tr1 {
-	background-color: gray;
-	text-align: center;
-}
-
-.footer {
-	height: 200px;
-	background-color: yellowgreen;
-	color: black;
-	text-align: center;
-}
-</style>
 </head>
 <body>
 	<div class="header">
@@ -90,8 +19,8 @@ body {
             <li>삼성</li>
             <li>애플</li>
             <!-- board.jsp로 이동하도록 수정 -->
-            <li><a href="/phoneBoardServlet">게시판</a></li>
-            <li><a href="">전체</a></li>
+            <li><a href="<%=request.getContextPath()%>/board">게시판</a></li>
+            <li><a href="<%=request.getContextPath()%>/home">전체</a></li>
         </div>
         <div class="right">
             <li><a href="">로그인</a></li>
