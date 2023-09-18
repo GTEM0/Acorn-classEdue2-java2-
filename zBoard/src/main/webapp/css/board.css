@@ -57,9 +57,16 @@ body {
 }
 
 .tr1 {
-	background-color: gray;
-	width: 99%;
+	background-color: gray;	
 	text-align: center;	
+	width: 99%;
+}
+
+.tdTitle {
+	text-decoration-line: none;
+}
+.tdId{
+	text-decoration: none;
 }
 
 .footer {

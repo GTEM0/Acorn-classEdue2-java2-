@@ -7,83 +7,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link href="<%=request.getContextPath()%>/css/board.css"
+	rel="stylesheet" />
+
 <title>글쓰기</title>
 <style>
-.header {
-	height: 100px;
-	background-color: pink;
-	color: white;
-	text-align: center;
-	line-height: 50px;
-	padding: 10px;
-}
-
-.navbar {
-	height: 40px;
-	background-color: gray;
-	color: white;
-	line-height: 20px;
-}
-
-.navbar ul {
-	list-style-type: none;
-	padding: 0;
-	display: flex;
-	justify-content: space-between;
-}
-
-.navbar .left {
-	
-}
-
-.navbar .right {
-	
-}
-
-.navbar li {
-	display: inline;
-	margin-right: 10px;
-}
-
-.body {
-	height: 500px;
-	background-color: bluesky;
-	text-align: center;
-	padding-top: 50px;
-}
-
-.boardZone {
-	text-align: center;
-}
-
-.footer {
-	height: 200px;
-	background-color: yellowgreen;
-	color: black;
-	text-align: center;
-}
-
-/* Additional styles for the write page */
-.write-form {
-	width: 80%;
-	margin: 0 auto;
-	padding: 20px;
-	background-color: white;
-	border: 1px solid gray;
-}
-
-.write-label {
-	font-weight: bold;
-}
-
-.write-textarea {
-	width: 100%;
-	height: 200px;
-}
-
-.write-button {
-	margin-top: 10px;
-}
 </style>
 </head>
 <body>
@@ -95,8 +23,9 @@
 			<div class="left">
 				<li>삼성</li>
 				<li>애플</li>
-				<li><a href="board.jsp">게시판</a></li>
-				<li><a href="">전체</a></li>
+
+				<li><a href="<%=request.getContextPath()%>/board">게시판</a></li>
+				<li><a href="<%=request.getContextPath()%>/home">전체</a></li>
 			</div>
 			<div class="right">
 				<li><a href="">로그인</a></li>
@@ -106,17 +35,19 @@
 	</div>
 
 	<div class="body">
-		<div class="write-form">
+		<div class="writeForm">
 			<h2>글쓰기</h2>
 			<form action="submit.jsp" method="post">
-				<label class="write-label" for="title">제목:</label><br> <input
-					type="text" id="title" name="title"><br>
-				<br> <label class="write-label" for="content">내용:</label><br>
-				<textarea id="content" name="content" class="write-textarea"
+				<label class="writeLabel" for="title">제목:</label><br> <input
+					type="text" id="title" name="title"><br> <br> <label
+					class="writeLabel" for="content">내용:</label><br>
+				<textarea id="content" name="content" class="writeTextarea"
 					maxlength="300"></textarea>
-				<br>
-				<br><input type="submit" value="글쓰기" class="writeButton" href="">
-				<input type="submit" value="저장" class="saveButton" href="home.jsp">
+				<br> <br>
+				<input type="submit" value="글쓰기" class="writeButton"
+					href="<%=request.getContextPath()%>/write"> <input type="submit" value="저장"
+					class="saveButton"
+					href="<%=request.getContextPath()%>/SaveDataServlet">
 			</form>
 
 			<%

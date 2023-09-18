@@ -1,13 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="Board.boardDAO"%>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="Board.board"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>웹 페이지</title>
-<link href="<%=request.getContextPath()%>/css/board.css" rel="stylesheet"/>
+<title>게시판( •̀ ω •́ )✧</title>
+<link href="<%=request.getContextPath()%>/css/board.css"
+	rel="stylesheet" />
 </head>
 <body>
+
 	<div class="header">
 		<h1>핸드폰창고</h1>
 	</div>
@@ -26,36 +31,49 @@
 		</ul>
 	</div>
 
-	<div class="boardZone">
+	<div class="container">
 		<div class="row">
-			<table class="tableStripedTop">
+			<table class="table tableStriped"
+				style="text-align: center; border: 1px solid darkgray">
 				<thead>
-					<tr class="tr1">
-						<th>번호</th>
-						<th>제목</th>
-						<th>작성자</th>
-						<th>작성일</th>
-						<th>조회수</th>
+					<tr>
+						<th style="background-color: gray; text-align: center;">번호</th>
+						<th style="background-color: gray; text-align: center;">제목</th>
+						<th style="background-color: gray; text-align: center;">작성자</th>
+						<th style="background-color: gray; text-align: center;">작성일</th>
 					</tr>
 				</thead>
 				<tbody>
+					<%
+					ArrayList<board> list = (ArrayList<board>) request.getAttribute("list");
+					%>
+					<%
+					for (board b : list) {
+					%>
 					<tr>
-						<td>1</td>
-						<td>이쁘게 바꾸는법</td>
-						<td>롸롸</td>
-						<td>0915</td>
-						<td>12</td>
+						<td><%=b.getQuestionCode()%></td>
+						<td class="tdTitle"><a
+							href="<%=request.getContextPath()%>/read?questionCode =<%=b.getQuestionCode()%>"><%=b.getTitle()%></a></td>
+						<td class="tdId"><a
+							href="<%=request.getContextPath()%>/myPage"><%=b.getBuyerId()%></a></td>
+						<td><%=b.getWriteDate()%></td>
 					</tr>
+					<%
+					}
+					%>
+
 				</tbody>
 			</table>
-			<a href="write.jsp" class="btn btnPrimary pullRight">글쓰기</a>
+			<a href="<%=request.getContextPath()%>/write"
+				class="btn btnPrimary pullRight">글쓰기</a>
+			<%-- 			<a href="<%=request.getContextPath()%>/SaveDataServlet" class="btn btnPrimary pullRight">글쓰기</a> --%>
 		</div>
 
 	</div>
 
 
 	<div class="footer">
-		<p>핸드폰판매 고객센터 이용약관 쇼핑몰 이용약관 개인정보 처리방침 회사정보 회사명에이콘통신 대표조은경</p>
+		<p>핸드폰판매 고객센터 이용약관 쇼핑몰 이용약관 개인정보 처리방침 회사정보 회사명에이콘통신 대표 조은경</p>
 		<p>사업자번호181-22-01015 주소 서울특별시 마포구 양화로 122 4층 개인정보관리책임자 박태민 이메일</p>
 		<p>ekzzang@naver.com 판매제휴업체 SKT - 밀수 / KT - 밀수 / LGU+ - 밀수 대표
 			김병진,김민규</p>
